@@ -26,6 +26,30 @@
         user.AddTrack(music9);
         user.AddTrack(music10);
 
+        Console.WriteLine("\n=== Testing Negative Input ==="); //1
+        try
+        {
+            music1.increasePlayCount(-100);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+        Console.WriteLine("\n=== Testing Overflow Input ==="); //2
+        try
+        {
+            for (int i = 0; i < 300; i++)
+            {
+
+                music2.increasePlayCount(10000000);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
         user.PrintAllTrack();
     }
 }
